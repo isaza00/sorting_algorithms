@@ -13,7 +13,7 @@ void selection_sort(int *array, size_t size)
 
 	if (!array)
 		return;
-	while(current_index < size)
+	while (current_index < size)
 	{
 		swap_value = array[current_index];
 		current_min = array[current_index];
