@@ -72,7 +72,7 @@ void insertion_sort_list(listint_t **list)
 			}
 		}
 		if (!flag)
-			temp = temp->next;
+		temp = temp->next;
 		flag = 0;
 	}
 }

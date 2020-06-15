@@ -11,7 +11,7 @@ void selection_sort(int *array, size_t size)
 	size_t current_index = 0, i = 0, current_index_min = 0;
 	int current_min = array[0], swap_value, done = 1;
 
-	if (!array)
+	if (!array) || size < 2)
 		return;
 	while (current_index < size)
 	{
