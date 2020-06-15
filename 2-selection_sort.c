@@ -9,7 +9,7 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t current_index = 0, i = 0, current_index_min = 0;
-	int current_min = array[0], swap_value;
+	int current_min = array[0], swap_value, done = 0;
 
 	if (!array || size < 2)
 		return;
@@ -23,11 +23,16 @@ void selection_sort(int *array, size_t size)
 			{
 				current_min = array[i];
 				current_index_min = i;
+				done = 1;
 			}
 		}
-		array[current_index_min] = swap_value;
-		array[current_index] = current_min;
-		print_array(array, size);
+		if (done)
+		{
+			array[current_index_min] = swap_value;
+			array[current_index] = current_min;
+			print_array(array, size);
+		}
 		current_index += 1;
+		done = 0;
 	}
 }
