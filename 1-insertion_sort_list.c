@@ -44,7 +44,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *temp, *temp_rev;
 	int flag = 0, flag_rev = 0;
 
-	if (!*list)
+	if (!list)
 		return;
 	temp = *list;
 	while (temp->next)
