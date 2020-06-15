@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 /**
  * partition - separate the array into to partitions
  * @array: doble pointer to node list
