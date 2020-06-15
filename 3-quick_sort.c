@@ -64,5 +64,7 @@ void sort(int *array, long long int first, long long int end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (size < 2)
+		return;
 	sort(array, 0, size - 1, size);
 }
