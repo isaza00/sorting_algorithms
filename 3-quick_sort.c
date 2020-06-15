@@ -8,7 +8,7 @@
  * @size: size of the array
  * Return: prints array each time it swaps
  */
-size_t partition(int *array, int first, int end, size_t size)
+int partition(int *array, int first, int end, size_t size)
 {
 	int pivot_index = first, i = first;
 	int pivot = array[end], temp;
@@ -17,24 +17,20 @@ size_t partition(int *array, int first, int end, size_t size)
 	{
 		if (array[i] < pivot)
 		{
+			temp = array[i];
+			array[i] = array[pivot_index];
+			array[pivot_index] = temp;
 			if (pivot_index != i)
-			{
-				temp = array[i];
-				array[i] = array[pivot_index];
-				array[pivot_index] = temp;
 				print_array(array, size);
-			}
 			pivot_index += 1;
 		}
 		i += 1;
 	}
+	temp = array[pivot_index];
+	array[pivot_index] = pivot;
+	array[end] = temp;
 	if (pivot_index != end)
-	{
-		temp = array[pivot_index];
-		array[pivot_index] = pivot;
-		array[end] = temp;
 		print_array(array, size);
-	}
 	return (pivot_index);
 }
 /**
