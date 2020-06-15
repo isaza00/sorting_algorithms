@@ -8,9 +8,9 @@
  * @size: size of the array
  * Return: prints array each time it swaps
  */
-size_t partition(int *array, size_t first, size_t end, size_t size)
+size_t partition(int *array, int first, int end, size_t size)
 {
-	size_t pivot_index = first, i = first;
+	int pivot_index = first, i = first;
 	int pivot = array[end], temp;
 
 	while (i < end)
@@ -45,15 +45,14 @@ size_t partition(int *array, size_t first, size_t end, size_t size)
  * @size: size of the array
  * Return: prints array each time it swaps
  */
-void sort(int *array, size_t first, size_t end, size_t size)
+void sort(int *array, int first, int end, size_t size)
 {
-	size_t pivot_index;
+	int pivot_index;
 
 	if (first < end)
 	{
 		pivot_index = partition(array, first, end, size);
-		if (pivot_index > 0)
-			sort(array, first, pivot_index - 1, size);
+		sort(array, first, pivot_index - 1, size);
 		sort(array, pivot_index + 1, end, size);
 	}
 }
