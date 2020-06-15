@@ -45,14 +45,15 @@ size_t partition(int *array, size_t first, size_t end, size_t size)
  * @size: size of the array
  * Return: prints array each time it swaps
  */
-void sort(int *array, long long int first, long long int end, size_t size)
+void sort(int *array, size_t first, size_t end, size_t size)
 {
-	long long int pivot_index;
+	size_t pivot_index;
 
 	if (first < end)
 	{
 		pivot_index = partition(array, first, end, size);
-		sort(array, first, pivot_index - 1, size);
+		if (pivot_index > 0)
+			sort(array, first, pivot_index - 1, size);
 		sort(array, pivot_index + 1, end, size);
 	}
 }
@@ -64,7 +65,7 @@ void sort(int *array, long long int first, long long int end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (size < 2)
+	if (!array || size < 2)
 		return;
 	sort(array, 0, size - 1, size);
 }
