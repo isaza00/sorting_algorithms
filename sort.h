@@ -26,5 +26,4 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 
-size_t print_rev_dlistint(listint_t *h);
 #endif
