@@ -41,7 +41,7 @@ void swap_consec_node(listint_t *temp, listint_t **list)
  */
 void cocktail_sort_list(listint_t **list)
 {
-	int swap = 1, i = 0, j = 0;
+	int swap = 1;
 	listint_t *temp = *list;
 
 	if (!list)
@@ -60,11 +60,10 @@ void cocktail_sort_list(listint_t **list)
 					print_list(*list);
 			}
 			temp = temp->next;
-			i++;
 		}
 		temp = temp->prev;
 
-		while (temp->prev && i > j)
+		while (temp->prev)
 		{
 			if (temp->prev->n > temp->n)
 			{
@@ -75,10 +74,7 @@ void cocktail_sort_list(listint_t **list)
 					print_list(*list);
 			}
 			temp = temp->prev;
-			i--;
 		}
 		temp = temp->next;
-		j++;
-		i = 0;
 	}
 }
