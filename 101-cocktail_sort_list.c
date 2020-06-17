@@ -52,7 +52,7 @@ void cocktail_sort_list(listint_t **list)
 		while (temp->next)
 		{
 			printf("comparing: %i and %i\n", temp->n, temp->next->n);
-			if (temp->n >= temp->next->n)
+			if (temp->n > temp->next->n)
 			{
 				swap_consec_node(temp, list);
 				temp = temp->prev;
@@ -67,7 +67,7 @@ void cocktail_sort_list(listint_t **list)
 		while (temp->prev)
 		{
 			printf("comparing: %i and %i\n", temp->prev->n, temp->n);
-			if (temp->prev->n >= temp->n)
+			if (temp->prev->n > temp->n)
 			{
 				swap_consec_node(temp->prev, list);
 				temp = temp->next;
