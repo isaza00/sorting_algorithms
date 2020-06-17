@@ -63,7 +63,7 @@ void cocktail_sort_list(listint_t **list)
 			temp = temp->next;
 			i++; }
 		temp = temp->prev;
-		while (temp->prev && i >= j)
+		while (temp->prev && i > j)
 		{
 			printf("comparing %i and %i\n", temp->prev->n, temp->n);
 			if (temp->prev->n > temp->n)
