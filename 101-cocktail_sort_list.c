@@ -35,10 +35,9 @@ void swap_consec_node(listint_t *temp, listint_t **list)
 	dos->prev = uno_prev;
 }
 /**
- * bubble_sort - orders array with bubble sort algo
- * @array: array to order
- * @size: size of the array
- * Return: array ordered
+ * cocktail_sort_list - orders dlinked list with cocktail sort algo
+ * @list: head of double linked list
+ * Return: prints list on each swap
  */
 void cocktail_sort_list(listint_t **list)
 {
@@ -60,7 +59,6 @@ void cocktail_sort_list(listint_t **list)
 				print_list(*list);
 			}
 			temp = temp->next;
-			
 		}
 		temp = temp->prev;
 
